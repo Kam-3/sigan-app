@@ -1,9 +1,9 @@
-const faltasService = require('../config/services/faltasService');
+const faltasService = require('../services/faltasService');
 
 class FaltasController {
     async criar(req, res) {
         try {
-            const falta = await faltasService.registrar(req.body);
+            const falta = await faltasService.registrarFalta(req.body);
             res.status(201).json(falta);
         } catch (err) {
             res.status(500).json({ erro: err.message });

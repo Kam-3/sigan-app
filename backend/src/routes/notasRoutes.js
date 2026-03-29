@@ -4,8 +4,8 @@ const notaController = require('../controllers/notaController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 router.post('/', authMiddleware, notaController.registrarNota);
-router.get('/aluno/:aluno_id', authMiddleware, notaController.listarNotasPorAluno);
-router.put('/:id', authMiddleware, notaController.atualizarNota);
-router.delete('/:id', authMiddleware, notaController.deletarNota);
+router.get('/aluno/:aluno_id', authMiddleware, notaController.buscarPorAluno);
+router.put('/:id', authMiddleware, notaController.atualizar);
+router.delete('/:id', authMiddleware, notaController.excluir);
 
 module.exports = router;

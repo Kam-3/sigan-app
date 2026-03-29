@@ -4,15 +4,102 @@
   box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
+/* CONTAINER__PRINCIPAL */
+.PAINEL__CONTAINER {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App {
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-    height: auto;
-    width: auto;
+/* CABECALHO__ESTILIZADO */
+.CABECALHO__DASHBOARD {
+  background-color: #3b441b; /* Verde Oliva Escuro */
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.INFO__OPERADOR h2 {
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.CRACHA__PERFIL {
+  background-color: #d4af37; /* Dourado Militar */
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.BOTAO__SAIR {
+  background-color: #8b0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.BOTAO__SAIR:hover {
+  background-color: #ff0000;
+}
+
+/* AREA__DE__CONTEUDO */
+.CONTEUDO__PRINCIPAL {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* BARRA__DE__FERRAMENTAS */
+.BARRA__ACOES {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.CAMPO__PESQUISA {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #3b441b;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.BOTAO__ADICIONAR {
+  background-color: #3b441b;
+  color: white;
+  border: none;
+  padding: 0 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.BOTAO__ADICIONAR:hover {
+  background-color: #4b5320;
+}
+
+/* GRADE__DE__ALUNOS */
+.GRADE__MILITAR {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.MENSAGEM__CARREGANDO, .MENSAGEM__VAZIA {
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+  margin-top: 50px;
+  padding: 20px;
+  border: 2px dashed #ccc;
 }

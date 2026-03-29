@@ -9,7 +9,7 @@ const faltasRoutes = require('./routes/faltasRoutes');
 const notasRoutes = require('./routes/notasRoutes');
 const visitasRoutes = require('./routes/visitasRoutes');
 const authRoutes = require('./routes/authRoutes');
-const authMiddleware = require('./config/middlewares/authMiddleware');
+const authMiddleware = require('./middlewares/authMiddleware');
 
 const app = express();
 

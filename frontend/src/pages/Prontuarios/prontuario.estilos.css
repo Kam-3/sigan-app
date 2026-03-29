@@ -1,0 +1,89 @@
+.pront__fundo {
+    min-height: 100vh;
+    background-color: #2d3748;
+}
+
+.pront__topo {
+    background: #1a365d;
+    color: white;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn__voltar {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pront__corpo {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.info__aluno__box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    border-bottom: 5px solid #ecc94b;
+    margin-bottom: 20px;
+}
+
+.info__aluno__box h3 {
+    margin: 0;
+    color: #1a365d;
+    text-transform: uppercase;
+}
+
+.abas__navegacao {
+    display: flex;
+    background: #1a365d;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.aba__item {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.aba__item.ativa {
+    opacity: 1;
+    background: #2a4365;
+    border-bottom: 3px solid #ecc94b;
+}
+
+.conteudo__dinamico {
+    background: white;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    min-height: 300px;
+}
+
+.btn__lancar {
+    background: #1a365d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.secao__dados h4 {
+    color: #1a365d;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}

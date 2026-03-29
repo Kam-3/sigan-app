@@ -1,0 +1,130 @@
+/* fundo no azul mais claro conforme o protótipo */
+.login__fundo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* cartão de login branco centralizado */
+.login__cartao {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+/* cabeçalho superior em azul marinho/preto */
+.login__topo {
+  background-color: #1a202c;
+  color: #ffffff;
+  padding: 18px 25px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* corpo do formulário */
+.login__corpo {
+  padding: 35px;
+}
+
+.unidade__nome {
+  text-align: center;
+  color: #2d3748;
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.campo__grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.campo__grupo label {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin-bottom: 8px;
+}
+
+.campo__grupo input {
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.campo__grupo input:focus {
+  border-color: #1a202c;
+  outline: none;
+}
+
+/* botão de ação em azul escuro */
+.login__botao {
+  width: 100%;
+  padding: 14px;
+  background-color: #1a202c;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.login__botao:hover {
+  background-color: #2d3748;
+}
+
+/* caixa de informação azul clara com bordas padronizadas */
+.info__rodape {
+  margin-top: 30px;
+  background-color: #ebf8ff;
+  border-left: 5px solid #3182ce; /* azul claro lateral */
+  border-bottom: 3px solid #ecc94b; /* detalhe dourado do protótipo */
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.info__box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info__texto strong {
+  display: block;
+  color: #2b6cb0;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+.info__texto p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.8rem;
+}
+
+.alerta__erro {
+  color: #c53030;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}

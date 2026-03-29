@@ -4,39 +4,45 @@ const jwt = require('jsonwebtoken');
 
 class AuthController {
     async login(req, res) {
-        const { username, password } = req.body;
+        // AJUSTE AQUI: Receber 'usuario' e 'senha' para bater com o Frontend
+        const { usuario, senha } = req.body;
 
         try {
-            // 1. Procura o usuário na tabela 'usuarios' que criámos no Postgres
-            const { rows } = await db.query('SELECT * FROM usuarios WHERE nome_usuario = $1', [username]);
-            const usuario = rows[0];
+            // 1. Busca o usuário pelo nome de usuário (coluna nome_usuario)
+            const { rows } = await db.query('SELECT * FROM usuarios WHERE nome_usuario = $1', [usuario]);
+            const usuario_encontrado = rows[0];
 
-            if (!usuario) {
-                return res.status(404).json({ erro: 'Usuário não encontrado.' });
+            if (!usuario_encontrado) {
+                return res.status(401).json({ erro: 'Credenciais inválidas.' });
             }
 
-            // 2. Compara a password enviada com a do banco (usando bcrypt)
-            // Nota: Se ainda estiver a usar texto limpo no banco, use: password === usuario.senha_usuario
-            const senhaValida = await bcrypt.compare(password, usuario.senha_usuario);
-            if (!senhaValida) {
-                return res.status(401).json({ erro: 'Senha incorreta.' });
+            // 2. Verifica se a senha bate (usando o bcrypt para comparar o hash)
+            // AJUSTE AQUI: Usar a variável 'senha' que veio do req.body
+            const senha__valida = await bcrypt.compare(senha, usuario_encontrado.senha_usuario);
+            
+            if (!senha__valida) {
+                return res.status(401).json({ erro: 'Credenciais inválidas.' });
             }
 
-            // 3. Cria o "Passe Digital" (Token) que expira em 2 horas
+            // 3. Gera o Token JWT
             const token = jwt.sign(
-                { id: usuario.id, perfil: usuario.perfil },
+                { id: usuario_encontrado.id, perfil: usuario_encontrado.perfil },
                 process.env.JWT_SECRET,
-                { expiresIn: '2h' }
+                { expiresIn: '8h' }
             );
 
-            res.json({ 
-                mensagem: 'Login efetuado!', 
-                token, 
-                user: { nome: usuario.nome_completo, perfil: usuario.perfil } 
+            res.json({
+                auth: true,
+                token: token,
+                user: {
+                    nome: usuario_encontrado.nome_completo,
+                    perfil: usuario_encontrado.perfil
+                }
             });
 
-        } catch (error) {
-            res.status(500).json({ erro: 'Erro no processo de login.' });
+        } catch (err) {
+            console.error(err); // Importante para você ver erros de conexão no console
+            res.status(500).json({ erro: 'Erro interno no servidor.' });
         }
     }
 }

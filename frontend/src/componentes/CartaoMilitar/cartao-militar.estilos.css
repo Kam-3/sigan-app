@@ -1,78 +1,81 @@
-.cartao-militar {
-    background: linear-gradient(145deg, #00B4D8 0%, #0096C7 100%);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    aspect-ratio: 3 / 4;
-    position: relative;
-    border: 2px solid #FFFFFF;
+.militar__cartao {
+  background: linear-gradient(145deg, #00b4d8 0%, #0077b6 100%); /* azul turquesa do protótipo */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  aspect-ratio: 3/4;
+  border: 2px solid #ffffff;
+  position: relative;
 }
 
-.cartao-militar:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+.militar__cartao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
 }
 
-/* Bordas de Status baseadas no Comportamento */
-.status-normal { border-color: #00B4D8; }
-.status-alerta { border-color: #ecc94b; }
-.status-critico { 
-    border-color: #f56565; 
-    animation: pulsarGlow 1.5s ease-in-out infinite;
+.cartao__capa {
+  height: 70%;
+  background-color: #e6f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-@keyframes pulsarGlow {
-    0% { box-shadow: 0 0 0 0 rgba(245, 101, 101, 0.5); }
-    50% { box-shadow: 0 0 20px 5px rgba(245, 101, 101, 0.6); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 101, 101, 0.5); }
+.avatar__padrao i {
+  font-size: 4rem;
+  color: #0077b6;
+  opacity: 0.8;
 }
 
-.foto-container {
-    flex: 1;
-    overflow: hidden;
-    background: #E6F7FA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cartao__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.foto-militar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.overlay__gradiente {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
 }
 
-.foto-padrao {
-    font-size: 64px;
-    color: #FFFFFF;
+.cartao__legenda {
+  background-color: #ffffff;
+  height: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid #0096c7;
 }
 
-.info-militar {
-    background: #FFFFFF;
-    padding: 12px 8px;
-    text-align: center;
+.aluno__numero {
+  background: #e6f7fa;
+  color: #0077b6;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  margin-bottom: 5px;
+  font-family: 'Courier New', monospace;
 }
 
-.numero-aluno {
-    font-size: 0.85em;
-    color: #0096C7;
-    font-weight: 700;
-    font-family: 'Courier New', monospace;
-    background: #E6F7FA;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-bottom: 4px;
-    display: inline-block;
+.aluno__guerra {
+  color: #1a202c;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
-.nome-guerra {
-    display: block;
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #1a202c;
-    text-transform: uppercase;
+.aluno__posto {
+  color: #0077b6;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 500;
 }

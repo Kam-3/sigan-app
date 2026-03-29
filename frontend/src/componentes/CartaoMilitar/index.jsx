@@ -1,34 +1,27 @@
-import React from 'react';
+import react from 'react';
 import './cartao-militar.estilos.css';
 
-const CartaoMilitar = ({ aluno, onClick }) => {
-    // Lógica para definir a classe de borda baseada no comportamento
-    const obterClasseStatus = (comportamento) => {
-        if (comportamento === 'MAU' || comportamento === 'INSUFICIENTE') return 'status-critico';
-        if (comportamento === 'REGULAR') return 'status-alerta';
-        return 'status-normal';
-    };
-
+const Cartaomilitar = ({ aluno, onClick }) => {
     return (
-        <div 
-            className={`cartao-militar ${obterClasseStatus(aluno.class_comportamento)}`}
-            onClick={() => onClick(aluno.id)}
-        >
-            <div className="foto-container">
-                {aluno.dados_foto ? (
-                    <img src={aluno.dados_foto} alt={aluno.nome_guerra} className="foto-militar" />
+        <div className="militar__cartao" onClick={onClick}>
+            <div className="cartao__capa">
+                {aluno.foto ? (
+                    <img src={aluno.foto} alt={aluno.nome_guerra} className="cartao__img" />
                 ) : (
-                    <i className="fas fa-user-shield foto-padrao"></i>
+                    <div className="avatar__padrao">
+                        <i className="fas fa-user-shield"></i>
+                    </div>
                 )}
+                <div className="overlay__gradiente"></div>
             </div>
-
-            <div className="info-militar">
-                <span className="numero-aluno">N° {aluno.numero_aluno.toString().padStart(3, '0')}</span>
-                <span className="nome-guerra">{aluno.nome_guerra}</span>
-                <small style={{ color: '#0077B6', fontStyle: 'italic' }}>{aluno.rank}</small>
+            
+            <div className="cartao__legenda">
+                <span className="aluno__numero">N° {String(aluno.numero_aluno).padStart(3, '0')}</span>
+                <span className="aluno__guerra">{aluno.nome_guerra}</span>
+                <span className="aluno__posto">{aluno.rank || 'Aluno'}</span>
             </div>
         </div>
     );
 };
 
-export default CartaoMilitar;
+export default Cartaomilitar;

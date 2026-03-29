@@ -1,0 +1,159 @@
+/* conforme o protótipo: fundo azul ardósia claro */
+.dash__fundo {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: white;
+  padding-bottom: 60px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* barra superior preta conforme imagem */
+.topo__admin {
+  background-color: #000000;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1a202c;
+}
+
+.perfil__box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar__circulo {
+  width: 42px;
+  height: 42px;
+  background: #2d3748;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.nome__usuario {
+  font-weight: bold;
+  color: #edf2f7;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.cracha__admin {
+  background-color: #d69e2e; /* dourado do protótipo */
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.topo__comandos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn__gerenciar, .btn__sair {
+  background: #2d3748;
+  color: white;
+  border: 1px solid #4a5568;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* banner do sigan (cor escura do protótipo) */
+.banner__sigan {
+  margin: 25px 40px;
+  background-color: #1a202c;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.titulo__secao {
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.icone__escudo { color: #d4af37; font-size: 1.5rem; }
+
+.titulo__secao h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #edf2f7;
+}
+
+.ferramentas__barra {
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #000000; /* barra de ferramentas preta */
+}
+
+.btn__intranet, .btn__relatorios {
+  background: #2d3748;
+  color: #63b3ed;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.comandos__principais { display: flex; gap: 10px; }
+
+.btn__exportar { background: #38a169; color: white; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.btn__importar { background: #d69e2e; color: white; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+.btn__limpar { background: #c53030; color: white; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+
+/* corpo e grade */
+.dash__conteudo { padding: 0 40px; }
+.campo__busca {
+  width: 100%;
+  padding: 15px;
+  background: #1a202c;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.dash__grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* estado vazio */
+.vazio__container {
+  text-align: center;
+  padding: 80px 0;
+  color: #a0aec0;
+}
+
+.icone__vazio { font-size: 4rem; margin-bottom: 20px; opacity: 0.3; }
+
+.btn__add__flutuante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #1a202c;
+  color: white;
+  border: 2px solid #ecc94b;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}

@@ -1,13 +1,19 @@
-const visitarService = require('../services/visitarService');
+const visitasService = require('../services/visitasService');
 
 class VisitasController { 
-    async postVisita(req, res) {
+    async criar(req, res) {
         try {
-            const { aluno_id, nome_medico, motivo, convalescenca, dias_convalescenca, observacao_medica, data_visita, hora_visita } = req.body;
-            await visitarService.registrarVisita(aluno_id, nome_medico, motivo, convalescenca, dias_convalescenca, observacao_medica, data_visita, hora_visita);
-            res.status(201).json({ mensagem: 'Visita registrada!' });
+            // Passamos o req.body inteiro para o service
+            const novaVisita = await visitasService.registrar(req.body);
+            
+            res.status(201).json({ 
+                mensagem: 'Visita registrada com sucesso!',
+                dados: novaVisita 
+            });
         } catch (err) {
             res.status(500).json({ erro: err.message });
         }
     }
 }
+
+module.exports = new VisitasController();
