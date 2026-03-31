@@ -1,8 +1,8 @@
-const db = require('../config/database');
+const db = require("../config/database");
 
 class AlunoService {
-    async cadastrar(dados) {
-        const query = `
+  async cadastrar(dados) {
+    const query = `
             INSERT INTO alunos (
                 numero_aluno, id_militar, nome_guerra, nome_completo, aniversario, 
                 data_ingresso, naturalidade, nacionalidade, cpf, rg_civil, 
@@ -18,25 +18,68 @@ class AlunoService {
             RETURNING id;
         `;
 
-        const valores = [
-            dados.numero_aluno, dados.id_militar, dados.nome_guerra, dados.nome_completo, dados.aniversario,
-            dados.data_ingresso, dados.naturalidade, dados.nacionalidade, dados.cpf, dados.rg_civil,
-            dados.titulo_eleitor, dados.cert_reservista, dados.estado_civil, dados.tipo_sanguineo, dados.religiao,
-            dados.escolaridade, dados.endereco_comp, dados.bairro, dados.cidade_uf, dados.cep,
-            dados.telefone_residencial, dados.contato_pessoal, dados.email_pessoal, dados.contato_familiar_nome,
-            dados.contato_familiar_telefone, dados.contato_familiar_email, dados.contato_emergencia_nome,
-            dados.contato_emergencia_telefone, dados.contato_emergencia_email, dados.nome_pai,
-            dados.nome_mae, dados.endereco_pais, dados.dados_foto, dados.class_comportamento
-        ];
+    const valores = [
+      dados.numero_aluno,
+      dados.id_militar,
+      dados.nome_guerra,
+      dados.nome_completo,
+      dados.aniversario,
+      dados.data_ingresso,
+      dados.naturalidade,
+      dados.nacionalidade,
+      dados.cpf,
+      dados.rg_civil,
+      dados.titulo_eleitor,
+      dados.cert_reservista,
+      dados.estado_civil,
+      dados.tipo_sanguineo,
+      dados.religiao,
+      dados.escolaridade,
+      dados.endereco_comp,
+      dados.bairro,
+      dados.cidade_uf,
+      dados.cep,
+      dados.telefone_residencial,
+      dados.contato_pessoal,
+      dados.email_pessoal,
+      dados.contato_familiar_nome,
+      dados.contato_familiar_telefone,
+      dados.contato_familiar_email,
+      dados.contato_emergencia_nome,
+      dados.contato_emergencia_telefone,
+      dados.contato_emergencia_email,
+      dados.nome_pai,
+      dados.nome_mae,
+      dados.endereco_pais,
+      dados.dados_foto,
+      dados.class_comportamento,
+    ];
 
-        const { rows } = await db.query(query, valores);
-        return rows[0];
-    }
+    const { rows } = await db.query(query, valores);
+    return rows[0];
+  }
 
-    async listarTodos() {
-        const { rows } = await db.query('SELECT * FROM alunos ORDER BY numero_aluno ASC');
-        return rows;
-    }
+  async listarTodos() {
+    const { rows } = await db.query(
+      "SELECT * FROM alunos ORDER BY numero_aluno ASC",
+    );
+    return rows;
+  }
+
+  async registrar(dados) {
+    const colunas = Object.keys(dados).join(", ");
+    const valores = Object.values(dados);
+    const placeholders = valores.map((_, i) => `$${i + 1}`).join(", ");
+
+    const query = `
+        INSERT INTO alunos (${colunas})
+        VALUES (${placeholders})
+        RETURNING *;
+    `;
+
+    const resultado = await db.query(query, valores);
+    return resultado.rows[0];
+  }
 }
 
 module.exports = new AlunoService();

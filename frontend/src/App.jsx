@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import RotaProtegida from './componentes/RotaProtegida';
+import CadastrarAlunos from './pages/CadastrarAlunos';
 import './App.css';
 
 function App() {
@@ -21,6 +22,17 @@ function App() {
             </RotaProtegida>
           } 
         />
+
+        {/* ADICIONE AQUI 👇 */}
+        <Route 
+          path="/cadastrar-aluno" 
+          element={
+            <RotaProtegida>
+              <CadastrarAlunos />
+            </RotaProtegida>
+          } 
+        />
+
       </Routes>
     </Router>
   );
