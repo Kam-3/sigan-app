@@ -1,0 +1,45 @@
+
+version: '3.8'
+
+services:
+# Banco de Dados
+db:
+image: postgres:15-alpine
+container_name: sigan_db_container
+restart: always
+environment:
+POSTGRES_USER: postgres
+POSTGRES_PASSWORD: postgres
+POSTGRES_DB: sigan_db
+ports:
+- "5432:5432"
+volumes:
+- postgres_data:/var/lib/postgresql/data
+
+# Backend
+backend:
+build: ./backend
+container_name: sigan_backend
+ports:
+- "3000:3000"
+environment:
+- DB_USER=postgres
+- DB_PASSWORD=postgres
+- DB_HOST=db
+- DB_PORT=5432
+- DB_DATABASE=sigan_db
+- JWT_SECRET=seu_segredo_jwt
+depends_on:
+- db
+
+# Frontend
+frontend:
+build: ./frontend
+container_name: sigan_frontend
+ports:
+- "80:80"
+depends_on:
+- backend
+
+volumes:
+postgres_data:
