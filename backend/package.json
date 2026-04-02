@@ -8,3 +8,9 @@
     "pg": "^8.20.0"
   }
 }
+
+"scripts": {
+  "start": "node src/server.js",
+  "seed": "node seedAdmin.js",
+  "init-project": "npm install && npm run seed"
+}

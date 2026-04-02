@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config({ path: './backend/.env' });
+require('dotenv').config();
 const db = require('./config/database');
 
 const alunoRoutes = require('./routes/alunoRoutes');
