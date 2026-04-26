@@ -26,11 +26,11 @@ async function criarAdmin() {
 
         await db.query(query, valores);
 
-        console.log('✅ SUCESSO: Usuário Admin criado!');
-        console.log(`👤 Login: ${loginUsuario} | 🔑 Senha: ${senhaPura}`);
+        console.log('SUCESSO: Usuário Admin criado!');
+        console.log(`Login: ${loginUsuario} | 🔑 Senha: ${senhaPura}`);
         process.exit();
     } catch (err) {
-        console.error('❌ ERRO ao criar admin:', err.message);
+        console.error('ERRO ao criar admin:', err.message);
         process.exit(1);
     }
 }

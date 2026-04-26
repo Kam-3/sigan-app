@@ -1,39 +1,55 @@
 version: '3.8'
 
 services:
-  # BANCO DE DADOS
+
   db:
     image: postgres:15-alpine
     container_name: sigan_db_container
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: sigan_db
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
     ports:
-      - "5432:5432"
+      - "${DB_PORT}:5432"
     volumes:
-      - ./sigan-app.sql:/docker-entrypoint-initdb.d/sigan-app.sql  
       - postgres_data:/var/lib/postgresql/data
+      - ./sigan_db.sql:/docker-entrypoint-initdb.d/sigan_db.sql
 
-  # BACKEND
   backend:
-    build: ./backend
+    build:
+      context: ./backend
+      dockerfile: backend/Dockerfile
     container_name: sigan_backend
-    ports:
-      - "3000:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     environment:
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
       - DB_HOST=db
       - DB_PORT=5432
-      - DB_DATABASE=sigan_db
-      - JWT_SECRET=seu_segredo_super_secreto
+      - DB_DATABASE=${DB_DATABASE}
+      - JWT_SECRET=${JWT_SECRET}
+    ports:
+      - "${BACKEND_PORT}:3000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend/logs:/app/logs
 
-  # FRONTEND
+
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      dockerfile: frontend/Dockerfile
     container_name: sigan_frontend
     ports:
       - "80:80"

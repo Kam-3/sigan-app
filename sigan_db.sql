@@ -2,28 +2,17 @@
 -- PostgreSQL database dump
 --
 
-\restrict IxH1kblecreTDNLYP1W5wIaVqkSoW0sDDuH3m17Sifh2dayB8tQs5GkouwGT5ds
+\restrict 0DPWQ3ao97RqOY7J7FTBLZeOeB2cSbhnA6Bs1y8sbdLFNlQdfvJUDPuUXremO8L
 
 -- Dumped from database version 18.0
 -- Dumped by pg_dump version 18.1
 
--- Started on 2026-04-01 23:07:57
+-- Started on 2026-04-26 16:40:49
 
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET transaction_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
 
 --
 -- TOC entry 233 (class 1255 OID 32891)
--- Name: funcao_atualiza_data_alteracao(); Type: FUNCTION; Schema: public; Owner: -
+-- Name: funcao_atualiza_data_alteracao(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
 CREATE FUNCTION public.funcao_atualiza_data_alteracao() RETURNS trigger
@@ -36,13 +25,15 @@ END;
 $$;
 
 
+ALTER FUNCTION public.funcao_atualiza_data_alteracao() OWNER TO postgres;
+
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
 
 --
 -- TOC entry 220 (class 1259 OID 32870)
--- Name: alunos; Type: TABLE; Schema: public; Owner: -
+-- Name: alunos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.alunos (
@@ -86,9 +77,11 @@ CREATE TABLE public.alunos (
 );
 
 
+ALTER TABLE public.alunos OWNER TO postgres;
+
 --
 -- TOC entry 219 (class 1259 OID 32869)
--- Name: alunos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: alunos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.alunos_id_seq
@@ -100,10 +93,12 @@ CREATE SEQUENCE public.alunos_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.alunos_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 4997 (class 0 OID 0)
 -- Dependencies: 219
--- Name: alunos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: alunos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.alunos_id_seq OWNED BY public.alunos.id;
@@ -111,7 +106,7 @@ ALTER SEQUENCE public.alunos_id_seq OWNED BY public.alunos.id;
 
 --
 -- TOC entry 226 (class 1259 OID 32932)
--- Name: faltas; Type: TABLE; Schema: public; Owner: -
+-- Name: faltas; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.faltas (
@@ -124,9 +119,11 @@ CREATE TABLE public.faltas (
 );
 
 
+ALTER TABLE public.faltas OWNER TO postgres;
+
 --
 -- TOC entry 225 (class 1259 OID 32931)
--- Name: faltas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: faltas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.faltas_id_seq
@@ -138,10 +135,12 @@ CREATE SEQUENCE public.faltas_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.faltas_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 4998 (class 0 OID 0)
 -- Dependencies: 225
--- Name: faltas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: faltas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.faltas_id_seq OWNED BY public.faltas.id;
@@ -149,7 +148,7 @@ ALTER SEQUENCE public.faltas_id_seq OWNED BY public.faltas.id;
 
 --
 -- TOC entry 222 (class 1259 OID 32894)
--- Name: fos; Type: TABLE; Schema: public; Owner: -
+-- Name: fos; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.fos (
@@ -162,9 +161,11 @@ CREATE TABLE public.fos (
 );
 
 
+ALTER TABLE public.fos OWNER TO postgres;
+
 --
 -- TOC entry 221 (class 1259 OID 32893)
--- Name: fos_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: fos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.fos_id_seq
@@ -176,10 +177,12 @@ CREATE SEQUENCE public.fos_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.fos_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 4999 (class 0 OID 0)
 -- Dependencies: 221
--- Name: fos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: fos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.fos_id_seq OWNED BY public.fos.id;
@@ -187,7 +190,7 @@ ALTER SEQUENCE public.fos_id_seq OWNED BY public.fos.id;
 
 --
 -- TOC entry 228 (class 1259 OID 32948)
--- Name: notas; Type: TABLE; Schema: public; Owner: -
+-- Name: notas; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.notas (
@@ -202,9 +205,11 @@ CREATE TABLE public.notas (
 );
 
 
+ALTER TABLE public.notas OWNER TO postgres;
+
 --
 -- TOC entry 227 (class 1259 OID 32947)
--- Name: notas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: notas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.notas_id_seq
@@ -216,10 +221,12 @@ CREATE SEQUENCE public.notas_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.notas_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 5000 (class 0 OID 0)
 -- Dependencies: 227
--- Name: notas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: notas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.notas_id_seq OWNED BY public.notas.id;
@@ -227,7 +234,7 @@ ALTER SEQUENCE public.notas_id_seq OWNED BY public.notas.id;
 
 --
 -- TOC entry 224 (class 1259 OID 32912)
--- Name: punicoes; Type: TABLE; Schema: public; Owner: -
+-- Name: punicoes; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.punicoes (
@@ -243,9 +250,11 @@ CREATE TABLE public.punicoes (
 );
 
 
+ALTER TABLE public.punicoes OWNER TO postgres;
+
 --
 -- TOC entry 223 (class 1259 OID 32911)
--- Name: punicoes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: punicoes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.punicoes_id_seq
@@ -257,10 +266,12 @@ CREATE SEQUENCE public.punicoes_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.punicoes_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 5001 (class 0 OID 0)
 -- Dependencies: 223
--- Name: punicoes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: punicoes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.punicoes_id_seq OWNED BY public.punicoes.id;
@@ -268,7 +279,7 @@ ALTER SEQUENCE public.punicoes_id_seq OWNED BY public.punicoes.id;
 
 --
 -- TOC entry 232 (class 1259 OID 32983)
--- Name: usuarios; Type: TABLE; Schema: public; Owner: -
+-- Name: usuarios; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.usuarios (
@@ -280,9 +291,11 @@ CREATE TABLE public.usuarios (
 );
 
 
+ALTER TABLE public.usuarios OWNER TO postgres;
+
 --
 -- TOC entry 231 (class 1259 OID 32982)
--- Name: usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.usuarios_id_seq
@@ -294,10 +307,12 @@ CREATE SEQUENCE public.usuarios_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.usuarios_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 5002 (class 0 OID 0)
 -- Dependencies: 231
--- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.usuarios_id_seq OWNED BY public.usuarios.id;
@@ -305,7 +320,7 @@ ALTER SEQUENCE public.usuarios_id_seq OWNED BY public.usuarios.id;
 
 --
 -- TOC entry 230 (class 1259 OID 32965)
--- Name: visitas_medicas; Type: TABLE; Schema: public; Owner: -
+-- Name: visitas_medicas; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.visitas_medicas (
@@ -321,9 +336,11 @@ CREATE TABLE public.visitas_medicas (
 );
 
 
+ALTER TABLE public.visitas_medicas OWNER TO postgres;
+
 --
 -- TOC entry 229 (class 1259 OID 32964)
--- Name: visitas_medicas_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: visitas_medicas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.visitas_medicas_id_seq
@@ -335,10 +352,12 @@ CREATE SEQUENCE public.visitas_medicas_id_seq
     CACHE 1;
 
 
+ALTER SEQUENCE public.visitas_medicas_id_seq OWNER TO postgres;
+
 --
 -- TOC entry 5003 (class 0 OID 0)
 -- Dependencies: 229
--- Name: visitas_medicas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: visitas_medicas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.visitas_medicas_id_seq OWNED BY public.visitas_medicas.id;
@@ -346,7 +365,7 @@ ALTER SEQUENCE public.visitas_medicas_id_seq OWNED BY public.visitas_medicas.id;
 
 --
 -- TOC entry 4786 (class 2604 OID 32873)
--- Name: alunos id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: alunos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.alunos ALTER COLUMN id SET DEFAULT nextval('public.alunos_id_seq'::regclass);
@@ -354,7 +373,7 @@ ALTER TABLE ONLY public.alunos ALTER COLUMN id SET DEFAULT nextval('public.aluno
 
 --
 -- TOC entry 4797 (class 2604 OID 32935)
--- Name: faltas id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: faltas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.faltas ALTER COLUMN id SET DEFAULT nextval('public.faltas_id_seq'::regclass);
@@ -362,7 +381,7 @@ ALTER TABLE ONLY public.faltas ALTER COLUMN id SET DEFAULT nextval('public.falta
 
 --
 -- TOC entry 4791 (class 2604 OID 32897)
--- Name: fos id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: fos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.fos ALTER COLUMN id SET DEFAULT nextval('public.fos_id_seq'::regclass);
@@ -370,7 +389,7 @@ ALTER TABLE ONLY public.fos ALTER COLUMN id SET DEFAULT nextval('public.fos_id_s
 
 --
 -- TOC entry 4798 (class 2604 OID 32951)
--- Name: notas id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: notas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.notas ALTER COLUMN id SET DEFAULT nextval('public.notas_id_seq'::regclass);
@@ -378,7 +397,7 @@ ALTER TABLE ONLY public.notas ALTER COLUMN id SET DEFAULT nextval('public.notas_
 
 --
 -- TOC entry 4793 (class 2604 OID 32915)
--- Name: punicoes id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: punicoes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.punicoes ALTER COLUMN id SET DEFAULT nextval('public.punicoes_id_seq'::regclass);
@@ -386,7 +405,7 @@ ALTER TABLE ONLY public.punicoes ALTER COLUMN id SET DEFAULT nextval('public.pun
 
 --
 -- TOC entry 4804 (class 2604 OID 32986)
--- Name: usuarios id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: usuarios id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usuarios_id_seq'::regclass);
@@ -394,7 +413,7 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usu
 
 --
 -- TOC entry 4801 (class 2604 OID 32968)
--- Name: visitas_medicas id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: visitas_medicas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.visitas_medicas ALTER COLUMN id SET DEFAULT nextval('public.visitas_medicas_id_seq'::regclass);
@@ -403,7 +422,7 @@ ALTER TABLE ONLY public.visitas_medicas ALTER COLUMN id SET DEFAULT nextval('pub
 --
 -- TOC entry 4979 (class 0 OID 32870)
 -- Dependencies: 220
--- Data for Name: alunos; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: alunos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.alunos (id, criado_em, atualizado_em, dados_foto, numero_aluno, id_militar, nome_guerra, nome_completo, aniversario, data_ingresso, naturalidade, nacionalidade, cpf, rg_civil, titulo_eleitor, cert_reservista, estado_civil, tipo_sanguineo, religiao, escolaridade, endereco_comp, bairro, cidade_uf, cep, telefone_residencial, contato_pessoal, email_pessoal, contato_familiar_nome, contato_familiar_telefone, contato_familiar_email, contato_emergencia_nome, contato_emergencia_telefone, contato_emergencia_email, nome_pai, nome_mae, endereco_pais, class_comportamento) FROM stdin;
@@ -416,7 +435,7 @@ COPY public.alunos (id, criado_em, atualizado_em, dados_foto, numero_aluno, id_m
 --
 -- TOC entry 4985 (class 0 OID 32932)
 -- Dependencies: 226
--- Data for Name: faltas; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: faltas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.faltas (id, aluno_id, type, motivos, pontos_perdidos, date) FROM stdin;
@@ -426,7 +445,7 @@ COPY public.faltas (id, aluno_id, type, motivos, pontos_perdidos, date) FROM std
 --
 -- TOC entry 4981 (class 0 OID 32894)
 -- Dependencies: 222
--- Data for Name: fos; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: fos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.fos (id, aluno_id, type, descricao, date) FROM stdin;
@@ -436,7 +455,7 @@ COPY public.fos (id, aluno_id, type, descricao, date) FROM stdin;
 --
 -- TOC entry 4987 (class 0 OID 32948)
 -- Dependencies: 228
--- Data for Name: notas; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: notas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.notas (id, aluno_id, disciplina_id, nome_disciplina, nota_final, sub_nota, is_recuperacao, date) FROM stdin;
@@ -446,7 +465,7 @@ COPY public.notas (id, aluno_id, disciplina_id, nome_disciplina, nota_final, sub
 --
 -- TOC entry 4983 (class 0 OID 32912)
 -- Dependencies: 224
--- Data for Name: punicoes; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: punicoes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.punicoes (id, aluno_id, tipo_punicao, dias, motivo, pontos_perdidos, data_punicao, link_arquivo_anexo, criado_em) FROM stdin;
@@ -456,7 +475,7 @@ COPY public.punicoes (id, aluno_id, tipo_punicao, dias, motivo, pontos_perdidos,
 --
 -- TOC entry 4991 (class 0 OID 32983)
 -- Dependencies: 232
--- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.usuarios (id, nome_completo, nome_usuario, senha_usuario, perfil) FROM stdin;
@@ -467,7 +486,7 @@ COPY public.usuarios (id, nome_completo, nome_usuario, senha_usuario, perfil) FR
 --
 -- TOC entry 4989 (class 0 OID 32965)
 -- Dependencies: 230
--- Data for Name: visitas_medicas; Type: TABLE DATA; Schema: public; Owner: -
+-- Data for Name: visitas_medicas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.visitas_medicas (id, aluno_id, nome_medico, motivo, convalescenca, dias_convalescenca, observacao_medica, data_visita, hora_visita) FROM stdin;
@@ -477,7 +496,7 @@ COPY public.visitas_medicas (id, aluno_id, nome_medico, motivo, convalescenca, d
 --
 -- TOC entry 5004 (class 0 OID 0)
 -- Dependencies: 219
--- Name: alunos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: alunos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.alunos_id_seq', 6, true);
@@ -486,7 +505,7 @@ SELECT pg_catalog.setval('public.alunos_id_seq', 6, true);
 --
 -- TOC entry 5005 (class 0 OID 0)
 -- Dependencies: 225
--- Name: faltas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: faltas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.faltas_id_seq', 1, false);
@@ -495,7 +514,7 @@ SELECT pg_catalog.setval('public.faltas_id_seq', 1, false);
 --
 -- TOC entry 5006 (class 0 OID 0)
 -- Dependencies: 221
--- Name: fos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: fos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.fos_id_seq', 1, false);
@@ -504,7 +523,7 @@ SELECT pg_catalog.setval('public.fos_id_seq', 1, false);
 --
 -- TOC entry 5007 (class 0 OID 0)
 -- Dependencies: 227
--- Name: notas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: notas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.notas_id_seq', 1, false);
@@ -513,7 +532,7 @@ SELECT pg_catalog.setval('public.notas_id_seq', 1, false);
 --
 -- TOC entry 5008 (class 0 OID 0)
 -- Dependencies: 223
--- Name: punicoes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: punicoes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.punicoes_id_seq', 1, false);
@@ -522,7 +541,7 @@ SELECT pg_catalog.setval('public.punicoes_id_seq', 1, false);
 --
 -- TOC entry 5009 (class 0 OID 0)
 -- Dependencies: 231
--- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.usuarios_id_seq', 1, true);
@@ -531,7 +550,7 @@ SELECT pg_catalog.setval('public.usuarios_id_seq', 1, true);
 --
 -- TOC entry 5010 (class 0 OID 0)
 -- Dependencies: 229
--- Name: visitas_medicas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- Name: visitas_medicas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.visitas_medicas_id_seq', 1, false);
@@ -539,7 +558,7 @@ SELECT pg_catalog.setval('public.visitas_medicas_id_seq', 1, false);
 
 --
 -- TOC entry 4808 (class 2606 OID 32890)
--- Name: alunos alunos_numero_aluno_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: alunos alunos_numero_aluno_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.alunos
@@ -548,7 +567,7 @@ ALTER TABLE ONLY public.alunos
 
 --
 -- TOC entry 4810 (class 2606 OID 32888)
--- Name: alunos alunos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: alunos alunos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.alunos
@@ -557,7 +576,7 @@ ALTER TABLE ONLY public.alunos
 
 --
 -- TOC entry 4816 (class 2606 OID 32941)
--- Name: faltas faltas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: faltas faltas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.faltas
@@ -566,7 +585,7 @@ ALTER TABLE ONLY public.faltas
 
 --
 -- TOC entry 4812 (class 2606 OID 32905)
--- Name: fos fos_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: fos fos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.fos
@@ -575,7 +594,7 @@ ALTER TABLE ONLY public.fos
 
 --
 -- TOC entry 4818 (class 2606 OID 32958)
--- Name: notas notas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: notas notas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.notas
@@ -584,7 +603,7 @@ ALTER TABLE ONLY public.notas
 
 --
 -- TOC entry 4814 (class 2606 OID 32925)
--- Name: punicoes punicoes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: punicoes punicoes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.punicoes
@@ -593,7 +612,7 @@ ALTER TABLE ONLY public.punicoes
 
 --
 -- TOC entry 4822 (class 2606 OID 32997)
--- Name: usuarios usuarios_nome_usuario_key; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: usuarios usuarios_nome_usuario_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.usuarios
@@ -602,7 +621,7 @@ ALTER TABLE ONLY public.usuarios
 
 --
 -- TOC entry 4824 (class 2606 OID 32995)
--- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.usuarios
@@ -611,7 +630,7 @@ ALTER TABLE ONLY public.usuarios
 
 --
 -- TOC entry 4820 (class 2606 OID 32976)
--- Name: visitas_medicas visitas_medicas_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: visitas_medicas visitas_medicas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.visitas_medicas
@@ -620,7 +639,7 @@ ALTER TABLE ONLY public.visitas_medicas
 
 --
 -- TOC entry 4830 (class 2620 OID 32892)
--- Name: alunos gatilho_atualiza_discente; Type: TRIGGER; Schema: public; Owner: -
+-- Name: alunos gatilho_atualiza_discente; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
 CREATE TRIGGER gatilho_atualiza_discente BEFORE UPDATE ON public.alunos FOR EACH ROW EXECUTE FUNCTION public.funcao_atualiza_data_alteracao();
@@ -628,7 +647,7 @@ CREATE TRIGGER gatilho_atualiza_discente BEFORE UPDATE ON public.alunos FOR EACH
 
 --
 -- TOC entry 4827 (class 2606 OID 32942)
--- Name: faltas faltas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: faltas faltas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.faltas
@@ -637,7 +656,7 @@ ALTER TABLE ONLY public.faltas
 
 --
 -- TOC entry 4825 (class 2606 OID 32906)
--- Name: fos fos_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fos fos_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.fos
@@ -646,7 +665,7 @@ ALTER TABLE ONLY public.fos
 
 --
 -- TOC entry 4828 (class 2606 OID 32959)
--- Name: notas notas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: notas notas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.notas
@@ -655,7 +674,7 @@ ALTER TABLE ONLY public.notas
 
 --
 -- TOC entry 4826 (class 2606 OID 32926)
--- Name: punicoes punicoes_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: punicoes punicoes_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.punicoes
@@ -664,18 +683,18 @@ ALTER TABLE ONLY public.punicoes
 
 --
 -- TOC entry 4829 (class 2606 OID 32977)
--- Name: visitas_medicas visitas_medicas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: visitas_medicas visitas_medicas_aluno_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.visitas_medicas
     ADD CONSTRAINT visitas_medicas_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id) ON DELETE CASCADE;
 
 
--- Completed on 2026-04-01 23:07:58
+-- Completed on 2026-04-26 16:40:49
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict IxH1kblecreTDNLYP1W5wIaVqkSoW0sDDuH3m17Sifh2dayB8tQs5GkouwGT5ds
+\unrestrict 0DPWQ3ao97RqOY7J7FTBLZeOeB2cSbhnA6Bs1y8sbdLFNlQdfvJUDPuUXremO8L
 
