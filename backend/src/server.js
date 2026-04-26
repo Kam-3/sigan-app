@@ -31,9 +31,9 @@ app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
 
 db.query('SELECT NOW()', (err, res) => {
   if (err) {
-    console.error('❌ ERRO AO CONECTAR NO BANCO:', err.message);
+    console.error('ERRO AO CONECTAR NO BANCO:', err.message);
     console.log('Verifique se o serviço do PostgreSQL está rodando e se a senha no .env está correta.');
   } else {
-    console.log('✅ BANCO DE DADOS CONECTADO: Horário no banco é', res.rows[0].now);
+    console.log('BANCO DE DADOS CONECTADO: Horário no banco é', res.rows[0].now);
   }
 });

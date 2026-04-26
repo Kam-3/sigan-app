@@ -23,7 +23,7 @@
   gap: 15px;
 }
 
-.avatar__circulo {
+/* .avatar__circulo {
   width: 42px;
   height: 42px;
   background: #2d3748;
@@ -32,7 +32,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
-}
+} */
 
 .nome__usuario {
   font-weight: bold;
@@ -143,17 +143,36 @@
 
 .icone__vazio { font-size: 4rem; margin-bottom: 20px; opacity: 0.3; }
 
-.btn__add__flutuante {
+
+/* --- BOTÃO FLUTUANTE (FAB) --- */
+.botao-flutuante {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background-color: #1a202c;
-  color: white;
-  border: 2px solid #ecc94b;
+  bottom: 40px;
+  right: 40px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  font-size: 2rem;
+  background-color: #1a2b4c; 
+  color: #ca8a04; 
+  border: 2px solid #ca8a04;
+  font-size: 1.8rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000; 
+}
+
+.botao-flutuante:hover {
+  transform: scale(1.15); 
+  background-color: #0f172a; 
+  box-shadow: 0 6px 15px rgba(202, 138, 4, 0.4); 
+}
+
+.botao-flutuante:active {
+  transform: scale(0.95);
 }
